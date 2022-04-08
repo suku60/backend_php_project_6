@@ -21,7 +21,7 @@ class Party extends Model
         return $this->belongsTo(Game::class);
     }
 
-    public function players()
+    public function usersJoined()
     {
         return $this->belongsTo(User::class);
     }

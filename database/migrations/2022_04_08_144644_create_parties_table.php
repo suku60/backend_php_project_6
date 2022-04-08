@@ -14,7 +14,7 @@ class CreatePartiesTable extends Migration
     public function up()
     {
         Schema::create('parties', function (Blueprint $table) {
-            
+
             $table->increments('id');
 
             $table->string('name', 40);
@@ -37,6 +37,7 @@ class CreatePartiesTable extends Migration
             ->constrained('users')
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
