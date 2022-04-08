@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username', 100);
             $table->string('email', 100)->unique();
-            $table->string('password', 100);
+            $table->string('password', 20);
             $table->string('role', 10);
             $table->string('steamUsername', 50)->nullable();
             $table->timestamps();
