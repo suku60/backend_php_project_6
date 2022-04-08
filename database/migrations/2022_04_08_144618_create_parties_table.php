@@ -14,7 +14,29 @@ class CreatePartiesTable extends Migration
     public function up()
     {
         Schema::create('parties', function (Blueprint $table) {
-            $table->id();
+            
+            $table->increments('id');
+
+            $table->string('name', 40);
+            $table->string('description', 400);
+
+            $table->unsignedInteger('gameID');
+            $table->foreign('gameID')
+            ->references('id')
+            ->on('games')
+            ->unsigned()
+            ->constrained('games')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->unsignedInteger('creatorID');
+            $table->foreign('creatorID')
+            ->references('id')
+            ->on('users')
+            ->unsigned()
+            ->constrained('users')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
