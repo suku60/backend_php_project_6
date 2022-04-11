@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FriendController.php;
+use App\Http\Controllers\FriendsController.php;
 use App\Http\Controllers\GamesController.php;
 use App\Http\Controllers\MemberController.php;
 use App\Http\Controllers\MessageController.php;
