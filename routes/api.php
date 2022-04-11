@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FriendsController.php;
 use App\Http\Controllers\GamesController.php;
 use App\Http\Controllers\MemberController.php;
-use App\Http\Controllers\MessageController.php;
+use App\Http\Controllers\MessagesController.php;
 use App\Http\Controllers\PartiesController.php;
 use App\Http\Controllers\UsersController.php;
 
@@ -26,18 +26,34 @@ use App\Http\Controllers\UsersController.php;
 //     return $request->user();
 // });
 
+// Users CRUD
+Route::get('/users/username', [AuthController::class, 'showUser']);
+Route::get('/users/show', [UserController::class, 'showUsers']);
+Route::get('/users/show/{id}', [UserController::class, 'showUserById']);
+Route::put('/users/update/{id}', [UserController::class, 'updateUserById']);
+Route::delete('/users/delete/{id}', [UserController::class, 'deleteUserById']);
+
 // Games CRUD
-Route::get('/games', [GamesController::class, 'showGames']);
-Route::post('/games', [GamesController::class, 'addGame']);
-Route::get('/games/{id}', [GamesController::class, 'showGameById']);
-Route::put('/games/{id}', [GamesController::class, 'updateGameById']);
-Route::delete('/games/{id}', [GamesController::class, 'deleteGameById']);
+Route::get('/games/show', [GamesController::class, 'showGames']);
+Route::post('/games/add', [GamesController::class, 'addGame']);
+Route::get('/games/show/{id}', [GamesController::class, 'showGameById']);
+Route::put('/games/update/{id}', [GamesController::class, 'updateGameById']);
+Route::delete('/games/delete/{id}', [GamesController::class, 'deleteGameById']);
 
 // Parties CRUD
-Route::get('/parties', [PartiesController::class, 'showParties']);
-Route::post('/parties', [PartiesController::class, 'addParty']);
-Route::get('/parties/{id}', [PartiesController::class, 'showPartyById']);
-Route::put('/parties/{id}', [PartiesController::class, 'updatePartyById']);
-Route::delete('/parties/{id}', [PartiesController::class, 'deletePartyById']);
-Route::get('/parties/game/{id}', [PartiesController::class, "showPartiesByGameID"]);
+Route::get('/parties/show', [PartiesController::class, 'showParties']);
+Route::post('/parties/add', [PartiesController::class, 'addParty']);
+Route::get('/parties/show/{id}', [PartiesController::class, 'showPartyById']);
+Route::put('/parties/update/{id}', [PartiesController::class, 'updatePartyById']);
+Route::delete('/parties/delete/{id}', [PartiesController::class, 'deletePartyById']);
+// using fk
+Route::get('/parties/show/game/{id}', [PartiesController::class, 'showPartiesByGameID']);
 
+// Messages CRUD
+Route::post('/messages/add', [MessagesController::class, 'addMessage']);
+Route::get('/messages/show/all', [MessagesController::class, 'showAllMessages']);
+Route::get('/messages/show/{id}', [MessagesController::class, 'showMessageById']);
+Route::put('/messages/update/{id}', [MessagesController::class, 'updateMessageById']);
+Route::delete('/messages/delete/{id}', [MessagesController::class, 'deleteMessageById']);
+// using fk
+Route::get('/messages/show/party/{id}', [MessagesController::class, 'showMessageByPartyId']);
