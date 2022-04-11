@@ -37,7 +37,7 @@ Route::put('/users/update/{id}', [UserController::class, 'updateUserById']);
 Route::delete('/users/delete/{id}', [UserController::class, 'deleteUserById']);
 // using fk
 Route::get('/users/show/games', [UserController::class, 'showUserGames']);
-Route::get('/users/show/games/member/{id}', [UserController::class, 'showGamesWhereUserIsMember']);
+Route::get('/users/show/parties/member/{id}', [UserController::class, 'showPartiesWhereUserIsMember']);
 
 // Games CRUD
 Route::post('/games/add', [GamesController::class, 'addGame']);
