@@ -2,12 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FriendsController.php;
-use App\Http\Controllers\GamesController.php;
-use App\Http\Controllers\MemberController.php;
-use App\Http\Controllers\MessagesController.php;
-use App\Http\Controllers\PartiesController.php;
-use App\Http\Controllers\UsersController.php;
+
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PartiesController;
+use App\Http\Controllers\GamesController;
+use App\Http\Controllers\FriendsController;
+use App\Http\Controllers\MembersController;
+use App\Http\Controllers\MessagesController;
 
 // we have to import authcontroller once we create and have it
 
