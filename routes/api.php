@@ -27,22 +27,26 @@ use App\Http\Controllers\UsersController.php;
 // });
 
 // Users CRUD
-Route::get('/users/username', [AuthController::class, 'showUser']);
+Route::post('/users/add', [AuthController::class, 'addUser']);
+Route::get('/users/username', [AuthController::class, 'showMyUser']);
 Route::get('/users/show', [UserController::class, 'showUsers']);
 Route::get('/users/show/{id}', [UserController::class, 'showUserById']);
 Route::put('/users/update/{id}', [UserController::class, 'updateUserById']);
 Route::delete('/users/delete/{id}', [UserController::class, 'deleteUserById']);
+// using fk
+Route::get('/users/show/games', [UserController::class, 'showUserGames']);
+Route::get('/users/show/games/member/{id}', [UserController::class, 'showGamesWhereUserIsMember']);
 
 // Games CRUD
-Route::get('/games/show', [GamesController::class, 'showGames']);
 Route::post('/games/add', [GamesController::class, 'addGame']);
+Route::get('/games/show', [GamesController::class, 'showGames']);
 Route::get('/games/show/{id}', [GamesController::class, 'showGameById']);
 Route::put('/games/update/{id}', [GamesController::class, 'updateGameById']);
 Route::delete('/games/delete/{id}', [GamesController::class, 'deleteGameById']);
 
 // Parties CRUD
-Route::get('/parties/show', [PartiesController::class, 'showParties']);
 Route::post('/parties/add', [PartiesController::class, 'addParty']);
+Route::get('/parties/show', [PartiesController::class, 'showParties']);
 Route::get('/parties/show/{id}', [PartiesController::class, 'showPartyById']);
 Route::put('/parties/update/{id}', [PartiesController::class, 'updatePartyById']);
 Route::delete('/parties/delete/{id}', [PartiesController::class, 'deletePartyById']);
@@ -57,3 +61,20 @@ Route::put('/messages/update/{id}', [MessagesController::class, 'updateMessageBy
 Route::delete('/messages/delete/{id}', [MessagesController::class, 'deleteMessageById']);
 // using fk
 Route::get('/messages/show/party/{id}', [MessagesController::class, 'showMessageByPartyId']);
+
+// Members CRUD
+Route::post('/members/add', [MembersControllers::class, 'addMember']);
+Route::get('/members/show', [MembersControllers::class, 'showMembers']);
+Route::get('/members/show/{id}', [MembersControllers::class, 'showMemberById']);
+Route::put('/members/update/{id}', [MembersControllers::class, 'updateMemberById']);
+Route::delete('/members/delete/{id}', [MembersControllers::class, 'deleteMemberById']);
+// using fk 
+Route::get('/members/party/{id}', [MembersControllers::class, "showMembersByPartyId"]);
+Route::get('/members/delete/party/{id}', [MembersControllers::class, "deleteAllPartyMembersByPartyId"]);
+
+// Friends CRUD
+Route::get('/friends/add', [FriendsControllers::class, 'addFriend']);
+Route::post('/friends/show', [FriendsControllers::class, 'showFriends']);
+Route::get('/friends/show/{id}', [FriendsControllers::class, 'showFriendById']);
+Route::put('/friends/update/{id}', [FriendsControllers::class, 'updateFriendById']);
+Route::delete('/friends/delete/{id}', [FriendsControllers::class, 'deleteFriendById']);
