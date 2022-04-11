@@ -20,8 +20,8 @@ class CreatePartiesTable extends Migration
             $table->string('name', 40);
             $table->string('description', 400);
 
-            $table->unsignedInteger('gameID');
-            $table->foreign('gameID')
+            $table->unsignedInteger('gameId');
+            $table->foreign('gameId')
             ->references('id')
             ->on('games')
             ->unsigned()
@@ -29,8 +29,8 @@ class CreatePartiesTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
-            $table->unsignedInteger('creatorID');
-            $table->foreign('creatorID')
+            $table->unsignedInteger('creatorId');
+            $table->foreign('creatorId')
             ->references('id')
             ->on('users')
             ->unsigned()
