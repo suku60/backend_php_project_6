@@ -76,8 +76,8 @@ Route::delete('/members/delete/{id}', [MembersControllers::class, 'deleteMemberB
 // Route::get('/members/delete/party/{id}', [MembersControllers::class, "deleteAllPartyMembersByPartyId"]);
 
 // Friends CRUD
-// Route::get('/friends/add', [FriendsControllers::class, 'addFriend']);
-// Route::post('/friends/show', [FriendsControllers::class, 'showFriends']);
-// Route::get('/friends/show/{id}', [FriendsControllers::class, 'showFriendById']);
-// Route::put('/friends/update/{id}', [FriendsControllers::class, 'updateFriendById']);
-// Route::delete('/friends/delete/{id}', [FriendsControllers::class, 'deleteFriendById']);
+Route::get('/friends/add', [FriendsControllers::class, 'addFriend']);
+Route::post('/friends/show', [FriendsControllers::class, 'showFriends']);
+Route::get('/friends/show/{id}', [FriendsControllers::class, 'showFriendById']);
+Route::put('/friends/update/{id}', [FriendsControllers::class, 'updateFriendById']);
+Route::delete('/friends/delete/{id}', [FriendsControllers::class, 'deleteFriendById']);
