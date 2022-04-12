@@ -53,7 +53,7 @@ Route::get('/parties/show/{id}', [PartiesController::class, 'showPartyById']);
 Route::put('/parties/update/{id}', [PartiesController::class, 'updatePartyById']);
 Route::delete('/parties/delete/{id}', [PartiesController::class, 'deletePartyById']);
 // using fk
-Route::get('/parties/show/game/{id}', [PartiesController::class, 'showPartiesByGameID']);
+Route::get('/parties/show/game/{id}', [PartiesController::class, 'showPartiesByGameId']);
 
 // Messages CRUD
 // Route::post('/messages/add', [MessagesController::class, 'addMessage']);

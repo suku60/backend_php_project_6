@@ -13,7 +13,7 @@ class Message extends Model
         'message',
         'date',
         'writerMember',
-        'partyID'
+        'partyId'
     ];
 
     public function members()

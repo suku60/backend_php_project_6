@@ -18,7 +18,8 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
 
             $table->string('message', 400);
-            $table->string('date', 30);
+            $table->date('date', 50);
+            // find an api or a dateTime.now that sets this automatically
 
             $table->unsignedInteger('writerMember');
             $table->foreign('writerMember')
@@ -29,8 +30,8 @@ class CreateMessagesTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
-            $table->unsignedInteger('partyID');
-            $table->foreign('partyID')
+            $table->unsignedInteger('partyId');
+            $table->foreign('partyId')
             ->references('id')
             ->on('parties')
             ->unsigned()

@@ -67,7 +67,7 @@ class PartiesController extends Controller
             }
         }
 
-        public function showPartyByID($id)
+        public function showPartyById($id)
         {
             Log::info('showPartyById()');
 
@@ -107,7 +107,7 @@ class PartiesController extends Controller
                 $party = Party::find($id);
 
                 $party->name = $request->name;
-                $party->description = $request->description,
+                $party->description = $request->description;
                 $party->creatorId = $request->creatorId;
                 $party->gameId = $request->gameId;
 
@@ -149,7 +149,7 @@ class PartiesController extends Controller
 
         public function partiesByGameId($id)
         {
-            Log::info('partiesByGameID()');
+            Log::info('partiesByGameId()');
 
             try {
 

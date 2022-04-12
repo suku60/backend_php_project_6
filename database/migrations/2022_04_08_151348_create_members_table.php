@@ -17,8 +17,8 @@ class CreateMembersTable extends Migration
 
             $table->increments('id');
             
-            $table->unsignedInteger('partyID');
-            $table->foreign('partyID')
+            $table->unsignedInteger('partyId');
+            $table->foreign('partyId')
             ->references('id')
             ->on('parties')
             ->unsigned()
@@ -26,8 +26,8 @@ class CreateMembersTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
             
-            $table->unsignedInteger('userID');
-            $table->foreign('userID')
+            $table->unsignedInteger('userId');
+            $table->foreign('userId')
             ->references('id')
             ->on('users')
             ->unsigned()

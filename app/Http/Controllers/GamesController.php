@@ -28,8 +28,6 @@ class GamesController extends Controller
         }
     }
 
-
-
     public function addGaame(Request $request)
     {
         Log::info('addGame()');
@@ -66,7 +64,6 @@ class GamesController extends Controller
         }
     }
 
-
     public function showGameById($id)
     {
         Log::info('showGameById()');
@@ -90,7 +87,6 @@ class GamesController extends Controller
             return response()->json(['message' => 'Could not find game'], 500);
         }
     }
-
 
     public function updateGameById($id, Request $request)
     {
@@ -127,7 +123,6 @@ class GamesController extends Controller
             return response()->json(['message' => 'Something went wrong'], 500);
         }
     }
-
     
     public function deleteGameById($id)
     {

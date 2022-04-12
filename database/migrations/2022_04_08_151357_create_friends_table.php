@@ -17,8 +17,8 @@ class CreateFriendsTable extends Migration
             
             $table->increments('id');
 
-            $table->unsignedInteger('user1_ID');
-            $table->foreign('user1_ID')
+            $table->unsignedInteger('user1_Id');
+            $table->foreign('user1_Id')
             ->references('id')
             ->on('users')
             ->unsigned()
@@ -26,8 +26,8 @@ class CreateFriendsTable extends Migration
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
-            $table->unsignedInteger('user2_ID');
-            $table->foreign('user2_ID')
+            $table->unsignedInteger('user2_Id');
+            $table->foreign('user2_Id')
             ->references('id')
             ->on('users')
             ->unsigned()
