@@ -40,11 +40,11 @@ Route::delete('/users/delete/{id}', [UserController::class, 'deleteUserById']);
 // Route::get('/users/show/parties/member/{id}', [UserController::class, 'showPartiesWhereUserIsMember']);
 
 // Games CRUD
-// Route::post('/games/add', [GamesController::class, 'addGame']);
-// Route::get('/games/show', [GamesController::class, 'showGames']);
-// Route::get('/games/show/{id}', [GamesController::class, 'showGameById']);
-// Route::put('/games/update/{id}', [GamesController::class, 'updateGameById']);
-// Route::delete('/games/delete/{id}', [GamesController::class, 'deleteGameById']);
+Route::post('/games/add', [GamesController::class, 'addGame']);
+Route::get('/games/show', [GamesController::class, 'showGames']);
+Route::get('/games/show/{id}', [GamesController::class, 'showGameById']);
+Route::put('/games/update/{id}', [GamesController::class, 'updateGameById']);
+Route::delete('/games/delete/{id}', [GamesController::class, 'deleteGameById']);
 
 // Parties CRUD
 Route::post('/parties/add', [PartiesController::class, 'addParty']);
