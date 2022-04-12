@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// ADD CLAN NAME & CLAN TABLE AT BACKEND! CLAN TAG!
+
 class CreateUsersTable extends Migration
 {
     /**

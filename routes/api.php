@@ -56,13 +56,14 @@ Route::delete('/parties/delete/{id}', [PartiesController::class, 'deletePartyByI
 Route::get('/parties/show/game/{id}', [PartiesController::class, 'showPartiesByGameId']);
 
 // Messages CRUD
-// Route::post('/messages/add', [MessagesController::class, 'addMessage']);
-// Route::get('/messages/show/all', [MessagesController::class, 'showAllMessages']);
-// Route::get('/messages/show/{id}', [MessagesController::class, 'showMessageById']);
-// Route::put('/messages/update/{id}', [MessagesController::class, 'updateMessageById']);
-// Route::delete('/messages/delete/{id}', [MessagesController::class, 'deleteMessageById']);
+Route::post('/messages/add', [MessagesController::class, 'addMessage']);
+Route::get('/messages/show/all', [MessagesController::class, 'showAllMessages']);
+Route::get('/messages/show/{id}', [MessagesController::class, 'showMessageById']);
+Route::put('/messages/update/{id}', [MessagesController::class, 'updateMessageById']);
+Route::delete('/messages/delete/{id}', [MessagesController::class, 'deleteMessageById']);
 // using fk
-// Route::get('/messages/show/party/{id}', [MessagesController::class, 'showMessageByPartyId']);
+Route::get('/messages/show/party/{id}', [MessagesController::class, 'showMessageByPartyId']);
+Route::get('/messages/show/user/{id}', [MessagesController::class, 'showMessageByUserId']);
 
 // Members CRUD
 // Route::post('/members/add', [MembersControllers::class, 'addMember']);

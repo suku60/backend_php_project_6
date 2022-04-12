@@ -14,7 +14,7 @@ class MessageController extends Controller
 
             $messages = Message::all();
 
-            Log::info('TMessages shown');
+            Log::info('Messages shown');
 
             return response()->json($messages, 200);
 
@@ -149,6 +149,26 @@ class MessageController extends Controller
         try {
 
             $messages = Message::where('partyId', $id)->get();
+
+            Log::info('message shown');
+
+            return response()->json($messages, 200);
+
+        } catch (\Exception $e) {
+
+            Log::error($e->getMessage());
+
+            return response()->json(['message' => 'Could not show message'], 500);
+        }
+    }
+
+    public function showMessagesByUserId($id)
+    {
+        Log::info('showMessagesByUserId()');
+
+        try {
+
+            $messages = Message::where('writerMember', $id)->get();
 
             Log::info('message shown');
 
