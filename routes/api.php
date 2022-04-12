@@ -66,11 +66,11 @@ Route::get('/messages/show/party/{id}', [MessagesController::class, 'showMessage
 Route::get('/messages/show/user/{id}', [MessagesController::class, 'showMessageByUserId']);
 
 // Members CRUD
-// Route::post('/members/add', [MembersControllers::class, 'addMember']);
-// Route::get('/members/show', [MembersControllers::class, 'showMembers']);
-// Route::get('/members/show/{id}', [MembersControllers::class, 'showMemberById']);
-// Route::put('/members/update/{id}', [MembersControllers::class, 'updateMemberById']);
-// Route::delete('/members/delete/{id}', [MembersControllers::class, 'deleteMemberById']);
+Route::post('/members/add', [MembersControllers::class, 'addMember']);
+Route::get('/members/show', [MembersControllers::class, 'showMembers']);
+Route::get('/members/show/{id}', [MembersControllers::class, 'showMemberById']);
+Route::put('/members/update/{id}', [MembersControllers::class, 'updateMemberById']);
+Route::delete('/members/delete/{id}', [MembersControllers::class, 'deleteMemberById']);
 // using fk 
 // Route::get('/members/party/{id}', [MembersControllers::class, "showMembersByPartyId"]);
 // Route::get('/members/delete/party/{id}', [MembersControllers::class, "deleteAllPartyMembersByPartyId"]);
