@@ -142,4 +142,45 @@ class MemberController extends Controller
         }
     }
 
+    public function showMembersByPartyId($id)
+    {
+        Log::info('showMembersByPartyId()');
+
+        try {
+
+            $member = Member::where('partyId', $id)->get();
+
+            Log::info('party members shown');
+
+            return response()->json($member, 200);
+
+        } catch (\Exception $e) {
+
+            Log::error($e->getMessage());
+
+            return response()->json(['message' => 'Could not show members'], 500);
+        }
+    }
+
+     public function deleteAllPartyMembersByPartyId($id)
+    {
+        Log::info('deleteAllPartyMembersByPartyId()');
+
+        try {
+
+            $member = Member::where('partyId', $id)->delete();
+
+
+            Log::info('party members deleted');
+
+            return response()->json($member, 200);
+
+        } catch (\Exception $e) {
+
+            Log::error($e->getMessage());
+
+            return response()->json(['message' => 'Could not delete members'], 500);
+        }
+    }
+
 }
