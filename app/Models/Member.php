@@ -10,6 +10,8 @@ class Member extends Model
     use HasFactory;
 
     public $fillable = [
+        'partyUserTag',
+        'partyName',
         'partyId',
         'userId'
     ];

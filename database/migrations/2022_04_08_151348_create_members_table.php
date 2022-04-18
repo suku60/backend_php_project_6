@@ -18,7 +18,7 @@ class CreateMembersTable extends Migration
             $table->increments('id');
             $table->string('partyUserTag', 7);
 
-            $table->unsignedInteger('partyName');
+            $table->string('partyName');
             $table->foreign('partyName')
             ->references('name')
             ->on('parties')
