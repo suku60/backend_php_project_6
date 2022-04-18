@@ -25,7 +25,6 @@ class FriendsController extends Controller
             return response()->json(['message' => 'Could not show friends'], 500);
         }
     }
-
     public function addFriend(Request $request)
     {
         Log::info('addFriend()');
@@ -57,7 +56,6 @@ class FriendsController extends Controller
             return response()->json(['message' => 'Could not add friend'], 500);
         }
     }
-
     public function showFriendById($id)
     {
         Log::info('showFriendById()');
@@ -77,7 +75,6 @@ class FriendsController extends Controller
             return response()->json(['message' => 'Could not show friends'], 500);
         }
     }
-
     public function updateFriendById(Request $request, $id)
     {
         Log::info('updateFriendById()');
@@ -111,7 +108,6 @@ class FriendsController extends Controller
             return response()->json(['message' => 'Could not update Friend'], 500);
         }
     }
-
     public function deleteFriendById($id)
     {
         Log::info('deleteFriendById()');

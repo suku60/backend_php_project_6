@@ -10,29 +10,24 @@ use Illuminate\Http\Request;
 
 class PartiesController extends Controller
 {
-    
-        public function showParties()
-        {
+    public function showParties()
+    {
             Log::info('showParties()');
-    
             try {
-    
                 $parties = Party::all();
-    
                 Log::info('Showing all parties');
-    
+
                 return response()->json($parties, 200);
-    
+                
             } catch (\Exception $e) {
     
                 Log::error($e->getMessage());
     
                 return response()->json(['message' => 'Could not show all parties'], 500);
             }
-        }
-        
+    }
         public function addParty(Request $request)
-        {
+    {
             Log::info('addParty()');
     
             try {
@@ -65,10 +60,9 @@ class PartiesController extends Controller
     
                 return response()->json(['message' => 'Could not create party'], 500);
             }
-        }
-
-        public function showPartyById($id)
-        {
+    }
+    public function showPartyById($id)
+    {
             Log::info('showPartyById()');
 
             try {
@@ -85,10 +79,9 @@ class PartiesController extends Controller
 
                 return response()->json(['message' => 'Could not show party, Id may not exist'], 500);
             }
-        }
-
-        public function updatePartyById(Request $request, $id)
-        {
+    }
+    public function updatePartyById(Request $request, $id)
+    {
             Log::info('updatePartyById()');
 
             try {
@@ -123,10 +116,9 @@ class PartiesController extends Controller
 
                 return response()->json(['message' => 'Party updated succesfully'], 500);
             }
-        }
-
-        public function deletePartyById($id)
-        {
+    }
+    public function deletePartyById($id)
+    {
             Log::info('deletePartyById()');
 
             try {
@@ -145,10 +137,9 @@ class PartiesController extends Controller
 
                 return response()->json(['message' => 'Could not delete'], 500);
             }
-        }
-
-        public function partiesByGameId($id)
-        {
+    }
+    public function partiesByGameId($id)
+    {
             Log::info('partiesByGameId()');
 
             try {
@@ -165,6 +156,6 @@ class PartiesController extends Controller
 
                 return response()->json(['message' => 'Could not show party'], 500);
             }
-        }
+    }
 
 }

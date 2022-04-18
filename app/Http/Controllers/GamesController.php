@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
-
-
     public function showGames()
     {
         Log::info('showGames()');
@@ -27,7 +25,6 @@ class GamesController extends Controller
             return response()->json(['message' => 'Could not shown all games'], 500);
         }
     }
-
     public function addGaame(Request $request)
     {
         Log::info('addGame()');
@@ -63,7 +60,6 @@ class GamesController extends Controller
             return response()->json(['message' => 'Couldn not create3 game'], 500);
         }
     }
-
     public function showGameById($id)
     {
         Log::info('showGameById()');
@@ -87,7 +83,6 @@ class GamesController extends Controller
             return response()->json(['message' => 'Could not find game'], 500);
         }
     }
-
     public function updateGameById($id, Request $request)
     {
         Log::info('updateGame()');
@@ -123,7 +118,6 @@ class GamesController extends Controller
             return response()->json(['message' => 'Something went wrong'], 500);
         }
     }
-    
     public function deleteGameById($id)
     {
         Log::info('deleteGameById()');

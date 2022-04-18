@@ -25,7 +25,6 @@ class MessageController extends Controller
             return response()->json(['message' => 'Couldn not show messages'], 500);
         }
     }
-
     public function addMessage(Request $request)
     {
         Log::info('addMessage()');
@@ -61,7 +60,6 @@ class MessageController extends Controller
             return response()->json(['message' => 'Could not shown message'], 500);
         }
     }
-
     public function showMessageById($id)
     {
         Log::info('showMessageById()');
@@ -81,7 +79,6 @@ class MessageController extends Controller
             return response()->json(['message' => 'Could not show message'], 500);
         }
     }
-
     public function updateMessageById(Request $request, $id)
     {
         Log::info('updateMessageById()');
@@ -119,7 +116,6 @@ class MessageController extends Controller
             return response()->json(['message' => 'Could not update message'], 500);
         }
     }
-
     public function deleteMessageById($id)
     {
         Log::info('deleteMessageById()');
@@ -141,7 +137,6 @@ class MessageController extends Controller
             return response()->json(['message' => 'Could not delete message'], 500);
         }
     }
-
     public function showMessagesByPartyId($id)
     {
         Log::info('showMessagesByPartyId()');
@@ -161,7 +156,6 @@ class MessageController extends Controller
             return response()->json(['message' => 'Could not show message'], 500);
         }
     }
-
     public function showMessagesByUserId($id)
     {
         Log::info('showMessagesByUserId()');

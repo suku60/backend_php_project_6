@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PartiesController;
 use App\Http\Controllers\GamesController;
@@ -30,7 +32,9 @@ use App\Http\Controllers\MessagesController;
 // Users CRUD
 Route::post('/users/add', [AuthController::class, 'addUser']);
 Route::post('/users/log', [AuthController::class, 'logUser']);
-Route::get('/users/username', [AuthController::class, 'showMyUser']);
+Route::post('/users/logout', [AuthController::class, 'logOutUser']);
+Route::get('/users/show/me', [AuthController::class, 'showMe']);
+
 Route::get('/users/show', [UserController::class, 'showUsers']);
 Route::get('/users/show/{id}', [UserController::class, 'showUserById']);
 Route::put('/users/update/{id}', [UserController::class, 'updateUserById']);

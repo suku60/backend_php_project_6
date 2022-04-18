@@ -25,7 +25,6 @@ class MemberController extends Controller
             return response()->json(['message' => 'Could not show members'], 500);
         }
     }
-
     public function addMember(Request $request)
     {
         Log::info('addMember()');
@@ -57,7 +56,6 @@ class MemberController extends Controller
             return response()->json(['message' => 'Could not add member'], 500);
         }
     }
-
     public function showMemberById($id)
     {
         Log::info('showMemberById()');
@@ -77,7 +75,6 @@ class MemberController extends Controller
             return response()->json(['message' => 'Could not show members'], 500);
         }
     }
-
     public function updateMemberById(Request $request, $id)
     {
         Log::info('updateMemberById()');
@@ -115,7 +112,6 @@ class MemberController extends Controller
             return response()->json(['message' => 'Could not update member'], 500);
         }
     }
-
     public function deleteMemberById($id)
     {
         Log::info('deleteMemberById()');
@@ -141,7 +137,6 @@ class MemberController extends Controller
             return response()->json(['message' => 'Could not delete member'], 500);
         }
     }
-
     public function showMembersByPartyId($id)
     {
         Log::info('showMembersByPartyId()');
