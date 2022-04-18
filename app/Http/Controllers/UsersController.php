@@ -83,9 +83,6 @@ class UsersController extends Controller
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
-    
-    // register & login functions will be developed at authcontroller later
-    // logs will be deleted later after checking
 
     public function showUsers()
     {

@@ -28,9 +28,9 @@ use App\Http\Controllers\MessagesController;
 // });
 
 // Users CRUD
-// Route::post('/users/add', [AuthController::class, 'addUser']);
-// Route::post('/users/log', [AuthController::class, 'logUser']);
-// Route::get('/users/username', [AuthController::class, 'showMyUser']);
+Route::post('/users/add', [AuthController::class, 'addUser']);
+Route::post('/users/log', [AuthController::class, 'logUser']);
+Route::get('/users/username', [AuthController::class, 'showMyUser']);
 Route::get('/users/show', [UserController::class, 'showUsers']);
 Route::get('/users/show/{id}', [UserController::class, 'showUserById']);
 Route::put('/users/update/{id}', [UserController::class, 'updateUserById']);
