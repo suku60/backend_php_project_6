@@ -39,8 +39,9 @@ Route::get('/users/show/me', [AuthController::class, 'showMe']);
 Route::group([
     'middleware' => 'jwt.auth'
 ], function () { 
-    Route::get('/users/show', [UserController::class, 'showUsers']);
+    Route::get('/users/show/all', [UserController::class, 'showUsers']);
     Route::get('/users/show/{id}', [UserController::class, 'showUserById']);
+    Route::get('/users/show/area', [UserController::class, 'showUsersByCompanyArea']);
     Route::put('/users/update/{id}', [UserController::class, 'updateUserById']);
     Route::delete('/users/delete/{id}', [UserController::class, 'deleteUserById']);
     // using fk
@@ -53,7 +54,7 @@ Route::group([
     'middleware' => 'jwt.auth'
 ], function () { 
     Route::post('/games/add', [GamesController::class, 'addGame']);
-    Route::get('/games/show', [GamesController::class, 'showGames']);
+    Route::get('/games/show/all', [GamesController::class, 'showGames']);
     Route::get('/games/show/{id}', [GamesController::class, 'showGameById']);
     Route::put('/games/update/{id}', [GamesController::class, 'updateGameById']);
     Route::delete('/games/delete/{id}', [GamesController::class, 'deleteGameById']);
@@ -103,7 +104,7 @@ Route::group([
     Route::put('/members/update/{id}', [MembersControllers::class, 'updateMemberById']);
     Route::delete('/members/delete/{id}', [MembersControllers::class, 'deleteMemberById']);
     // using fk 
-    Route::get('/members/party/{id}', [MembersControllers::class, "showMembersByPartyId"]);
+    Route::get('/members/show/party/{id}', [MembersControllers::class, "showMembersByPartyId"]);
     Route::delete('/members/delete/party/{id}', [MembersControllers::class, "deleteAllPartyMembersByPartyId"]);
 });
    

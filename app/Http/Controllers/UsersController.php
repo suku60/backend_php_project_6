@@ -47,6 +47,25 @@ class UsersController extends Controller
             return response()->json(['message' => 'Error showing user by Id'], 500);
         }
     }
+    public function showUsersByCompanyArea($request)
+    {
+            Log::info('showUsersByCompanyArea()');
+
+            try {
+
+                $users = Party::where('company_area', $request)->get();
+
+                Log::info('showing users by area');
+
+                return response()->json($users, 200);
+
+            } catch (\Exception $e) {
+
+                Log::error($e->getMessage());
+
+                return response()->json(['message' => 'No users from this area'], 500);
+            }
+    }
     public function updateUserById(Request $request, $id)
     {
         Log::info('updateUserById()');
