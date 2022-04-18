@@ -13,10 +13,6 @@ Our backend has to have the following:
 
 ### Database
 
-[img]
-
-[explained]
-
 ### Endpoints
 
 #### Users
