@@ -13,7 +13,6 @@ class AuthController extends Controller
 {
     public function addUser(Request $request)
     {
-        Log::info('addUser()');
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|max:14',
             'email' => 'required|string|email|max:100',
@@ -34,7 +33,6 @@ class AuthController extends Controller
     }
     public function logUser(Request $request)
     {
-        Log::info('logUser()');
         $input = $request->only('username', 'password');
         $jwt_token = null;
         if (!$jwt_token = JWTAuth::attempt($input)) {
@@ -51,12 +49,10 @@ class AuthController extends Controller
     }
     public function showMe()
     {
-        Log::info('showMe()');
        return response()->json(auth()->user());;
     }   
     public function logOutUser(Request $request)
     {
-        Log::info('logOutUser()');
         $this->validate($request, [
             'token' => 'required'
         ]);

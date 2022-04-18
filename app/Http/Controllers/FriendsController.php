@@ -8,26 +8,22 @@ class FriendsController extends Controller
 {
     public function showFriends()
     {
-        Log::info('showFriends()');
 
         try {
 
             $friend = Friend::all();
 
-            Log::info('Friends shown');
 
             return response()->json($friend, 200);
 
         } catch (\Exception $e) {
 
-            Log::error($e->getMessage());
 
             return response()->json(['message' => 'Could not show friends'], 500);
         }
     }
     public function addFriend(Request $request)
     {
-        Log::info('addFriend()');
 
         try {
 
@@ -45,39 +41,33 @@ class FriendsController extends Controller
                 'user2_id' => $request->user2_id,
             ]);
 
-            Log::info('Friend added succesfully');
 
             return response()->json($friend, 200);
 
         } catch (\Exception $e) {
 
-            Log::error($e->getMessage());
 
             return response()->json(['message' => 'Could not add friend'], 500);
         }
     }
     public function showFriendById($id)
     {
-        Log::info('showFriendById()');
 
         try {
 
             $friend = Friend::find($id);
 
-            Log::info('showing friends by Id');
 
             return response()->json($friend, 200);
 
         } catch (\Exception $e) {
 
-            Log::error($e->getMessage());
 
             return response()->json(['message' => 'Could not show friends'], 500);
         }
     }
     public function updateFriendById(Request $request, $id)
     {
-        Log::info('updateFriendById()');
 
         try {
 
@@ -97,20 +87,17 @@ class FriendsController extends Controller
 
             $friend->save();
 
-            Log::info('Friend updated');
 
             return response()->json($friend, 200);
 
         } catch (\Exception $e) {
 
-            Log::error($e->getMessage());
 
             return response()->json(['message' => 'Could not update Friend'], 500);
         }
     }
     public function deleteFriendById($id)
     {
-        Log::info('deleteFriendById()');
 
         try {
 
@@ -122,13 +109,11 @@ class FriendsController extends Controller
 
             $friend->delete();
 
-            Log::info('Friend deleted');
 
             return response()->json(['message' => 'Friend deleted'], 200);
 
         } catch (\Exception $e) {
 
-            Log::error($e->getMessage());
 
             return response()->json(['message' => 'Could not delete friend'], 500);
         }

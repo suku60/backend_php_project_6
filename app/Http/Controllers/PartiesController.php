@@ -12,23 +12,20 @@ class PartiesController extends Controller
 {
     public function showParties()
     {
-            Log::info('showParties()');
+            info('showParties()');
             try {
                 $parties = Party::all();
-                Log::info('Showing all parties');
 
                 return response()->json($parties, 200);
                 
             } catch (\Exception $e) {
     
-                Log::error($e->getMessage());
     
                 return response()->json(['message' => 'Could not show all parties'], 500);
             }
     }
         public function addParty(Request $request)
     {
-            Log::info('addParty()');
     
             try {
     
@@ -50,39 +47,33 @@ class PartiesController extends Controller
                     'gameId' => $request->gameId,
                 ]);
     
-                Log::info('Party created');
     
                 return response()->json($party, 200);
     
             } catch (\Exception $e) {
     
-                Log::error($e->getMessage());
     
                 return response()->json(['message' => 'Could not create party'], 500);
             }
     }
     public function showPartyById($id)
     {
-            Log::info('showPartyById()');
 
             try {
 
                 $party = Party::find($id);
 
-                Log::info('Showing party by desired Id');
 
                 return response()->json($party, 200);
 
             } catch (\Exception $e) {
 
-                Log::error($e->getMessage());
 
                 return response()->json(['message' => 'Could not show party, Id may not exist'], 500);
             }
     }
     public function updatePartyById(Request $request, $id)
     {
-            Log::info('updatePartyById()');
 
             try {
 
@@ -106,20 +97,17 @@ class PartiesController extends Controller
 
                 $party->save();
 
-                Log::info('Party updated');
 
                 return response()->json($party, 200);
 
             } catch (\Exception $e) {
 
-                Log::error($e->getMessage());
 
                 return response()->json(['message' => 'Party updated succesfully'], 500);
             }
     }
     public function deletePartyById($id)
     {
-            Log::info('deletePartyById()');
 
             try {
 
@@ -127,32 +115,27 @@ class PartiesController extends Controller
 
                 $party->delete();
 
-                Log::info('Deleting party');
 
                 return response()->json(['message' => 'Party deleted'], 200);
 
             } catch (\Exception $e) {
 
-                Log::error($e->getMessage());
 
                 return response()->json(['message' => 'Could not delete'], 500);
             }
     }
     public function partiesByGameId($id)
     {
-            Log::info('partiesByGameId()');
 
             try {
 
                 $parties = Party::where('gameId', $id)->get();
 
-                Log::info('Party gotten by game Id');
 
                 return response()->json($parties, 200);
 
             } catch (\Exception $e) {
 
-                Log::error($e->getMessage());
 
                 return response()->json(['message' => 'Could not show party'], 500);
             }
