@@ -12,8 +12,10 @@ Our backend has to have the following:
 - Users will be able to update their profiles. 
 
 ### Database
+![readmephoto](https://user-images.githubusercontent.com/96541489/163828458-62bce1f5-ae8a-4c60-9dba-7a8a899aa026.png)
 
 ### Endpoints
+
 
 #### Users
 
