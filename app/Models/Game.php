@@ -12,7 +12,7 @@ class Game extends Model
     public $fillable = [
         'gameName',
         'description',
-        'img_url',
+        'imgUrl',
         'website'
     ];
 

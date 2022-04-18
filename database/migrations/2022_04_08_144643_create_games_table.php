@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->string('gameName', 40);
             $table->string('description', 400);
-            $table->string('img_url', 200);
+            $table->string('imgUrl', 200);
             $table->string('website', 200);
             $table->timestamps();
         });

@@ -53,7 +53,7 @@ class UsersController extends Controller
 
             try {
 
-                $users = Party::where('company_area', $request)->get();
+                $users = Party::where('companyArea', $request)->get();
 
                 Log::info('showing users by area');
 
